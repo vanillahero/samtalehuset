@@ -138,29 +138,51 @@
         background-attachment: fixed;
         margin: 0;
         max-width: 100%;
+        background-color: #D2A9A1;
       }
 
       .services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
       }
 
       .service-card {
-        background: rgba(255, 255, 255, 0.5);
-        padding: 30px;
+        background: rgba(255, 255, 255, 0.6);
+        padding: 40px;
         border-radius: 8px;
         border-top: 5px solid var(--primary);
-        transition: transform 0.2s;
-      }
-
-      .service-card:hover {
-        transform: translateY(-5px);
+        height: 100%;
       }
 
       .service-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        color: var(--text);
+      }
+
+      .service-card p {
         margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+
+      .service-card ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+        list-style-type: disc;
+      }
+
+      .service-card li {
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+
+      .service-card em {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        display: block;
+        margin-top: 20px;
       }
 
       .about-container {
@@ -240,6 +262,14 @@
           height: 250px;
           background-attachment: scroll;
         }
+
+        .service-card {
+          padding: 25px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -274,23 +304,64 @@
       <div class="services-grid">
         <div class="service-card">
           <h3>Individuell terapi</h3>
-          <p>For deg som ønsker å forstå deg selv bedre. Kanskje står du i krevende relasjoner, stress, uro, sorg eller indre konflikt.</p>
-          <br>
-          <small>Tilbys også digitalt.</small>
+          <p>For deg som ønsker å forstå deg selv bedre.</p>
+          <p>Kanskje står du i krevende relasjoner, stress, uro, sorg, lav selvfølelse eller indre konflikt. Kanskje kjenner du at du ønsker forandring, men ikke helt vet hvor du skal starte.</p>
+          <p>I samtalene jobber vi blant annet med:</p>
+          <ul>
+            <li>følelser og følelsesregulering</li>
+            <li>tanker, mønstre og indre dialog</li>
+            <li>selvkritikk og selvfølelse</li>
+            <li>stress og overveldelse</li>
+            <li>relasjonelle erfaringer</li>
+            <li>livsvalg og identitet</li>
+            <li>traumer og belastninger over tid</li>
+          </ul>
+          <em>Individualterapi tilbys også digitalt.</em>
         </div>
         <div class="service-card">
           <h3>Parterapi</h3>
-          <p>Når dere ønsker bedre kontakt eller samarbeid. Vi jobber med å endre fastlåste mønstre og styrke nærheten.</p>
-          <br>
-          <small>Tilbys også digitalt.</small>
+          <p>Når dere ønsker bedre kontakt eller bedre samarbeid.</p>
+          <p>I parterapi arbeider vi med å forstå og endre mønstre som skaper avstand, misforståelser eller konflikt, og fokuserer på å øke det emosjonelle båndet mellom dere. Vi kan også arbeide med å bedre samarbeid etter samlivsbrudd.</p>
+          <p>Sammen utforsker vi både kommunikasjon, følelser, reaksjonsmønstre og behov.</p>
+          <p>Parterapien kan hjelpe dere:</p>
+          <ul>
+            <li>å forstå hverandre og dere selv bedre</li>
+            <li>å snakke sammen i en trygg ramme</li>
+            <li>å stoppe fastlåste mønstre</li>
+            <li>å styrke nærhet og trygghet</li>
+            <li>å reparere etter brudd eller kriser</li>
+            <li>å styrke samarbeid etter brudd</li>
+          </ul>
+          <em>Parterapi tilbys også digitalt.</em>
         </div>
         <div class="service-card">
           <h3>Familieterapi</h3>
-          <p>Når dere har utfordringer med kommunikasjon eller samspill i familien. Foreldreveiledning og støtte.</p>
+          <p>Når dere har utfordringer med kommunikasjon eller samspill.</p>
+          <p>I familieterapi kan hele familien komme sammen til samtale. Vi har fokus på hvordan alle i familien opplever det som er vanskelig, og vi er også opptatt av det som fungerer godt i familien.</p>
+          <p>Familieterapi kan være til hjelp når:</p>
+          <ul>
+            <li>dere trenger å forstå hverandre og dere selv bedre</li>
+            <li>dere trenger å snakke sammen i en trygg ramme</li>
+            <li>dere vil endre fastlåste mønstre</li>
+            <li>mine, dine og våre barn skal bli en ny familie</li>
+            <li>en forelder eller et barn i familien har en kronisk sykdom</li>
+            <li>familien har opplevd kriser eller brudd</li>
+            <li>dere ønsker foreldreveiledning</li>
+          </ul>
         </div>
         <div class="service-card">
           <h3>Veiledning</h3>
-          <p>For fagpersoner og private som ønsker utvikling knyttet til jobb, studier eller vanskelige valg.</p>
+          <p>Veiledning passer for både fagpersoner og private som ønsker utvikling, klarhet eller støtte i relasjonelle og faglige prosesser.</p>
+          <p>I veiledning jobber vi med:</p>
+          <ul>
+            <li>refleksjon rundt egne mønstre</li>
+            <li>håndtering av relasjonelle utfordringer</li>
+            <li>faglige dilemmaer</li>
+            <li>rolleforståelse</li>
+            <li>kommunikasjon og grensesetting</li>
+            <li>selvivaretakelse og forebygging av omsorgstretthet</li>
+          </ul>
+          <em>Veiledningen tilbys både individuelt og i gruppe og kan gjøres digitalt.</em>
         </div>
       </div>
     </section>
