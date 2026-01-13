@@ -21,6 +21,10 @@
         padding: 0;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         font-family: 'Montserrat', sans-serif;
         background-color: var(--bg);
@@ -47,15 +51,20 @@
 
       header {
         background-color: var(--header-bg);
-        padding: 30px 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding: 20px 5%;
         position: sticky;
         top: 0;
         z-index: 1000;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width);
+        margin: 0 auto;
       }
 
       .logo {
@@ -66,21 +75,36 @@
         color: var(--text);
       }
 
-      nav ul {
+      .nav-menu {
         display: flex;
         gap: 30px;
         list-style: none;
         margin: 0;
       }
 
-      nav a {
+      .nav-link {
         font-size: 1.1rem;
         font-weight: 500;
         transition: color 0.3s;
+        cursor: pointer;
       }
 
-      nav a:hover {
+      .nav-link:hover {
         color: var(--primary);
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--text);
       }
 
       .hero {
@@ -292,16 +316,50 @@
       }
 
       @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          gap: 15px;
-          padding: 20px;
+        .hamburger {
+          display: block;
         }
 
-        nav ul {
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          gap: 0;
           flex-direction: column;
+          background-color: var(--white);
+          width: 100%;
           text-align: center;
-          gap: 15px;
+          transition: 0.3s;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+          padding-bottom: 20px;
+        }
+
+        .nav-item {
+          margin: 16px 0;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        header {
+          padding: 15px 20px;
+        }
+
+        .logo {
+          font-size: 1.4rem;
         }
 
         .hero h1 {
@@ -328,16 +386,21 @@
   </head>
   <body>
     <header>
-      <div class="logo">SAMTALEHUSET.COM</div>
-      <nav>
-        <ul>
-          <li><a href="#hjem">Hjem</a></li>
-          <li><a href="#tjenester">Tjenester</a></li>
-          <li><a href="#om">Om Ingrid</a></li>
-          <li><a href="#priser">Priser</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+      <div class="navbar-container">
+        <div class="logo">SAMTALEHUSET.COM</div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#hjem" class="nav-link">Hjem</a></li>
+          <li class="nav-item"><a href="#tjenester" class="nav-link">Tjenester</a></li>
+          <li class="nav-item"><a href="#om" class="nav-link">Om Ingrid</a></li>
+          <li class="nav-item"><a href="#priser" class="nav-link">Priser</a></li>
+          <li class="nav-item"><a href="#kontakt" class="nav-link">Kontakt</a></li>
         </ul>
-      </nav>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
     </header>
     <section class="hero" id="hjem">
       <h1>Når du trenger noen å snakke med.</h1>
@@ -505,6 +568,16 @@
       function toggleCard(card) {
         card.classList.toggle("active");
       }
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+      document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }));
     </script>
   </body>
 </html>
