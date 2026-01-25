@@ -1,1 +1,0 @@
-&copy; Samtalehuset.com
