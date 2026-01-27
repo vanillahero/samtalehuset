@@ -7,417 +7,395 @@
     <meta name="description" content="Trenger du noen å snakke med? Samtalehuset i Vikersund tilbyr terapi og veiledning for enkeltpersoner, par og familier. Bestill time hos Ingrid her.">
     <meta property="og:image" content="hender-comp.jpeg">
     <meta property="og:title" content="Samtalehuset - Terapi og Veiledning">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta8PUbHAkwc0l30zMXJjFNFkABSlSdsWne+UprwN/EgEA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<style>
-  :root {
-    --primary: #D2A9A1;
-    --text: #535151;
-    --bg: #EDE6DA;
-    --white: #ffffff;
-    --header-bg: #ffffff;
-    --max-width: 1100px;
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-  }
-
-  a {
-    color: var(--text);
-    text-decoration: none;
-  }
-
-  ul {
-    list-style-position: inside;
-    margin-bottom: 1rem;
-  }
-
-  header {
-    background-color: var(--header-bg);
-    padding: 20px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-  }
-
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo img {
-    height: 120px;
-    width: auto;
-    display: block;
-  }
-
-  @media (max-width: 868px) {
-    .logo img {
-      height: 60px;
-    }
-  }
-
-  .nav-menu {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s;
-    cursor: pointer;
-  }
-
-  .nav-link:hover {
-    color: var(--primary);
-  }
-
-  .hamburger {
-    display: none;
-    cursor: pointer;
-  }
-
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: var(--text);
-  }
-
-  .hero {
-    text-align: center;
-    padding: 80px 20px 60px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-    color: var(--text);
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    font-style: italic;
-  }
-
-  .btn {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: opacity 0.3s;
-  }
-
-  .btn:hover {
-    opacity: 0.9;
-  }
-
-  .hero-image-source {
-    background-image: url('hender-comp.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-color: #D2A9A1;
-  }
-
-  .image-break-desktop {
-    width: 100%;
-    height: 400px;
-    background-attachment: fixed;
-    margin: 0;
-    display: block;
-  }
-
-  .mobile-hero-image {
-    width: 100%;
-    height: 250px;
-    border-radius: 8px;
-    margin: 20px 0 30px 0;
-    display: none;
-  }
-
-  section {
-    padding: 60px 20px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    scroll-margin-top: 120px;
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    position: relative;
-  }
-
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--primary);
-    margin: 10px auto 0;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
-  }
-
-  .service-card {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 30px 40px;
-    border-radius: 8px;
-    border-top: 5px solid var(--primary);
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    position: relative;
-  }
-
-  .service-card:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-  }
-
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-
-  .service-card h3 {
-    font-size: 1.4rem;
-    margin: 0;
-    color: var(--text);
-  }
-
-  .toggle-icon {
-    font-size: 1.5rem;
-    color: var(--primary);
-    transition: transform 0.3s ease;
-    font-weight: 300;
-  }
-
-  .service-ingress {
-    font-size: 1rem;
-    margin-bottom: 0;
-  }
-
-  .service-details {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease;
-  }
-
-  .service-details p,
-  .service-details ul,
-  .service-details em {
-    margin-top: 20px;
-  }
-
-  .service-card.active {
-    background: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  }
-
-  .service-card.active .toggle-icon {
-    transform: rotate(180deg);
-  }
-
-  .service-card.active .service-details {
-    max-height: 1000px;
-    opacity: 1;
-  }
-
-  .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: center;
-  }
-
-  .about-text {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .about-image {
-    flex: 1;
-    min-width: 300px;
-    height: 400px;
-    background-color: #ddd;
-    background-image: url('image-nofilter.jpeg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-  }
-
-  .prices-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-  }
-
-  .price-col {
-    flex: 1;
-    min-width: 280px;
-  }
-
-  .price-item {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #eee;
-    padding: 10px 0;
-  }
-
-  footer {
-    background-color: var(--text);
-    color: var(--bg);
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 60px;
-  }
-
-  footer a {
-    color: var(--primary);
-  }
-
-  .social-icon-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: var(--primary);
-    color: var(--white);
-    font-size: 1.5rem;
-    margin-top: 20px;
-    margin-bottom: 15px; /* Added spacing after the button */
-    transition: background-color 0.3s;
-  }
-
-  .social-icon-btn:hover {
-    background-color: #bb8e87; /* Slightly darker shade of primary */
-  }
-
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu {
-      position: fixed;
-      left: -100%;
-      top: 70px;
-      gap: 0;
-      flex-direction: column;
-      background-color: var(--white);
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-      padding-bottom: 20px;
-    }
-
-    .nav-item {
-      margin: 16px 0;
-    }
-
-    .nav-menu.active {
-      left: 0;
-    }
-
-    header {
-      padding: 15px 20px;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-    }
-
-    .hero h1 {
-      font-size: 1.8rem;
-    }
-
-    .image-break-desktop {
-      display: none;
-    }
-
-    .mobile-hero-image {
-      display: block;
-    }
-
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .service-card {
-      padding: 25px;
-    }
-  }
-</style>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #D2A9A1;
+        --text: #535151;
+        --bg: #EDE6DA;
+        --white: #ffffff;
+        --header-bg: #ffffff;
+        --max-width: 1100px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 1rem;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      ul {
+        list-style-position: inside;
+        margin-bottom: 1rem;
+      }
+
+      header {
+        background-color: var(--header-bg);
+        padding: 20px 5%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 120px;
+        width: auto;
+        display: block;
+      }
+
+      @media (max-width: 868px) {
+        .logo img {
+          height: 60px;
+        }
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.3s;
+        cursor: pointer;
+      }
+
+      .nav-link:hover {
+        color: var(--primary);
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: var(--text);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 80px 20px 60px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        color: var(--text);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: opacity 0.3s;
+      }
+
+      .btn:hover {
+        opacity: 0.9;
+      }
+
+      .hero-image-source {
+        background-image: url('hender-comp.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-color: #D2A9A1;
+      }
+
+      .image-break-desktop {
+        width: 100%;
+        height: 400px;
+        background-attachment: fixed;
+        margin: 0;
+        display: block;
+      }
+
+      .mobile-hero-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+        margin: 20px 0 30px 0;
+        display: none;
+      }
+
+      section {
+        padding: 60px 20px;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        scroll-margin-top: 120px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: var(--primary);
+        margin: 10px auto 0;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .service-card {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 30px 40px;
+        border-radius: 8px;
+        border-top: 5px solid var(--primary);
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        position: relative;
+      }
+
+      .service-card:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .service-card h3 {
+        font-size: 1.4rem;
+        margin: 0;
+        color: var(--text);
+      }
+
+      .toggle-icon {
+        font-size: 1.5rem;
+        color: var(--primary);
+        transition: transform 0.3s ease;
+        font-weight: 300;
+      }
+
+      .service-ingress {
+        font-size: 1rem;
+        margin-bottom: 0;
+      }
+
+      .service-details {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease-out, opacity 0.4s ease;
+      }
+
+      .service-details p,
+      .service-details ul,
+      .service-details em {
+        margin-top: 20px;
+      }
+
+      .service-card.active {
+        background: #fff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .service-card.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .service-card.active .service-details {
+        max-height: 1000px;
+        opacity: 1;
+      }
+
+      .about-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        height: 400px;
+        background-color: #ddd;
+        background-image: url('image-nofilter.jpeg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+      }
+
+      .prices-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+      }
+
+      .price-col {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .price-item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+      }
+
+      footer {
+        background-color: var(--text);
+        color: var(--bg);
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      footer a {
+        color: var(--primary);
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          gap: 0;
+          flex-direction: column;
+          background-color: var(--white);
+          width: 100%;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+          padding-bottom: 20px;
+        }
+
+        .nav-item {
+          margin: 16px 0;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        header {
+          padding: 15px 20px;
+        }
+
+        .logo {
+          font-size: 1.4rem;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .image-break-desktop {
+          display: none;
+        }
+
+        .mobile-hero-image {
+          display: block;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-card {
+          padding: 25px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -588,20 +566,16 @@
         </div>
       </div>
     </section>
-<footer id="kontakt">
-  <h2>Kontakt</h2>
-  <p>Har du spørsmål eller ønsker å bestille time?</p>
-  <br>
-  <p><strong>Tlf:</strong> 904 16 999</p>
-  <p><strong>E-post:</strong> <a href="mailto:ingrid@samtalehuset.com">ingrid@samtalehuset.com</a></p>
-  <br>
-  <a href="https://www.facebook.com/profile.php?id=61586953562495" target="_blank" aria-label="Samtalehuset på Facebook" class="social-icon-btn">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <small>NB: Husk å ikke sende sensitiv informasjon på SMS eller e-post.</small>
-  <p style="opacity: 0.6; font-size: 0.8rem;">Org.nr: 936 675 581 | © 2026 Samtalehuset.com</p>
-</footer>
-
+    <footer id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Har du spørsmål eller ønsker å bestille time?</p>
+      <br>
+      <p><strong>Tlf:</strong> 904 16 999</p>
+      <p><strong>E-post:</strong> <a href="mailto:ingrid@samtalehuset.com">ingrid@samtalehuset.com</a></p>
+      <br>
+      <small>NB: Husk å ikke sende sensitiv informasjon på SMS eller e-post.</small>
+      <p style="opacity: 0.6; font-size: 0.8rem;">Org.nr: 936 675 581 | © 2026 Samtalehuset.com</p>
+    </footer>
     <script>
       function toggleCard(card) {
         card.classList.toggle("active");
